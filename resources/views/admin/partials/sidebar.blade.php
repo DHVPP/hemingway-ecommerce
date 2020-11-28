@@ -16,6 +16,16 @@
                     Insert new Products
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/posts">
+                    List all Posts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/blog/posts">
+                    Insert new Post
+                </a>
+            </li>
             {{--<li class="nav-item">
                 <a class="nav-link" href="/admin/color">
                     Insert new Color for the Product

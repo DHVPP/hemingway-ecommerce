@@ -12,6 +12,7 @@ use App\ProductColor;
 use App\ProductType;
 use App\ProductTypeMiddle;
 use App\Review;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Session;
@@ -290,15 +291,8 @@ class ProductsController extends Controller
      */
     public function storeProductColor(ProductColorRequest $request)
     {
-        $inPublicPath = 'images/products/';
         $data = $request->all();
-        $image = $request->file('image');
-        $format = $image->getClientOriginalExtension();
-        $imageName = $this->generateNameOfImage($format);
-
-        $image->move(public_path($inPublicPath), $imageName);
-
-        $data['imagePath'] = $inPublicPath . $imageName;
+        $data['imagePath'] = ImageService::saveImage($request->file('image'), ImageService::IMAGE_TYPE_PRODUCT);
         ProductColor::create($data);
 
         return redirect('/products/' . $data['idProduct']);
@@ -364,12 +358,7 @@ class ProductsController extends Controller
         $data = $request->all();
 
         if (!empty($data['image'])) {
-            $inPublicPath = 'images/products/';
-            $image = $request->file('image');
-            $format = $image->getClientOriginalExtension();
-            $imageName = $this->generateNameOfImage($format);
-            $image->move(public_path($inPublicPath), $imageName);
-            $data['mainImage'] = $inPublicPath . $imageName;
+            $data['imagePath'] = ImageService::saveImage($request->file('image'), ImageService::IMAGE_TYPE_PRODUCT);
         }
         if (!isset($data['isOnSpecialOffer'])) {
             $data['isOnSpecialOffer'] = false;
