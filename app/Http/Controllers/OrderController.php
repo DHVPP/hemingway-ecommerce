@@ -13,6 +13,7 @@ use App\Product;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 /**
@@ -91,6 +92,11 @@ class OrderController extends Controller
                 $data = $this->createOrder($request, new PostPaymentOrder);
                 break;
         }
+
+        if (!is_array($data)) {
+            return $data;
+        }
+
         return view('pages.checkout.page-invoice', [
             'data' => $data
         ]);
