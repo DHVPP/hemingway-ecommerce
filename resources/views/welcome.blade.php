@@ -18,7 +18,6 @@
                     <img src="{{asset("images/instagram.svg")}}" alt="" class="image-5">
                 </a>
             </div>
-            <a href="/products/special-offer"><img src="{{asset("images/black-friday.jpg")}}" class="black-friday-image"/></a>
         </div>
         <div class="div-block-4"><a href="#Proizvodi" class="link-block-2 w-inline-block"><img src="{{asset("images/button-down.svg")}}" alt="" class="image-6"></a></div>
     </div>

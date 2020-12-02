@@ -133,7 +133,7 @@
                 <div class="text-block">Muška Pećina</div>
             </a>
             <a href="/products/special-offer" class="link-block w-inline-block">
-                <div class="text-block black-friday">Black Friday</div>
+                <div class="text-block black-friday">Specijalna ponuda</div>
             </a>
         </div>
     </div>

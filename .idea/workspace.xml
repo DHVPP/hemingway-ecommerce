@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ab796d-5644-4daa-ab6c-a2070184ceec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/ImageService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/insert-post.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/update-post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/footer/prava.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/footer/prava.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav-bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +243,9 @@
       <workItem from="1606306449751" duration="2670000" />
       <workItem from="1606336743265" duration="4700000" />
       <workItem from="1606579018436" duration="631000" />
-      <workItem from="1606580378169" duration="7690000" />
+      <workItem from="1606580378169" duration="8476000" />
+      <workItem from="1606742288491" duration="891000" />
+      <workItem from="1606859620315" duration="932000" />
     </task>
     <servers />
   </component>
@@ -283,10 +281,10 @@
       <screen x="0" y="0" width="1854" height="1080" />
     </state>
     <state x="584" y="250" key="run.anything.popup/0.0.1854.1080@0.0.1854.1080" timestamp="1604173941523" />
-    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup" timestamp="1606341733759">
+    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup" timestamp="1606742299019">
       <screen x="0" y="0" width="1855" height="1080" />
     </state>
     <state x="589" y="235" width="674" height="678" key="search.everywhere.popup/0.0.1854.1080@0.0.1854.1080" timestamp="1605359351913" />
-    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup/0.0.1855.1080@0.0.1855.1080" timestamp="1606341733759" />
+    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup/0.0.1855.1080@0.0.1855.1080" timestamp="1606742299019" />
   </component>
 </project>

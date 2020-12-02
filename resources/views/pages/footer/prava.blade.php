@@ -47,6 +47,9 @@
                 pravno-finansijske regulative nalažu drugačije
             </li>
             <li>
+                Troškove dostave kod povraćaja robe snosi kupac, osim ukoliko nije dogovoreno drugačije.
+            </li>
+            <li>
                 <strong>Kako biste ostvarili navedena prava, potrebno je da sačuvate račun i isti, uz proizvod, priložite
                 prilikom reklamacije.</strong>
             </li>
