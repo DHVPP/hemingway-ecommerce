@@ -17,6 +17,9 @@ Route::get('/', 'HomeController@show');
 
 Auth::routes(['register' => false]);
 
+/* BLOG PAGES */
+Route::get('/blog', 'BlogController@showAllPosts');
+
 /* STATIC PAGES */
 Route::get('/about-us', 'StaticPagesController@about');
 Route::get('/contact', 'StaticPagesController@contact');
