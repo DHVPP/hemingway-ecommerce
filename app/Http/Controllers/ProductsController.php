@@ -215,7 +215,7 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         if ($request->get('quantity') > $product->quantityInStock) {
-            return back()->with('errors_quantity', 'Nemamo toliko proizvoda na stanju!');
+            return back()->with('errors_quantity', 'Nemamo toliko navedenih proizvoda na stanju!');
         }
 
         $price = $request->get('quantity') * $product->getPrice();

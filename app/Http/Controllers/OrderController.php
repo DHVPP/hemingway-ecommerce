@@ -12,6 +12,7 @@ use App\OrderProduct;
 use App\Product;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -103,6 +104,8 @@ class OrderController extends Controller
     }
 
     /**
+     * Dont ask what im doing in this method please
+     *
      * @param Request $request
      * @param Order $model
      * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -110,7 +113,6 @@ class OrderController extends Controller
     public function createOrder(Request $request, Order $model)
     {
         $order = $request->all();
-
         if (!Session::has('products')) {
             return redirect('/');
         }
@@ -120,7 +122,22 @@ class OrderController extends Controller
         $newOrder = $model->createOrder($order);
 
         $orderProducts = [];
+        $i = 0;
         foreach (Session::get('products') as $product) {
+            $prod = Product::find($product['product']->id);
+            if (!$prod instanceof Product || $prod->quantityInStock == 0){
+                $newOrder->delete();
+                $j = 0;
+                foreach (Session::get('products') as $p) {
+                    if ($j == $i) break;
+                    $rollbackProduct = Product::find($p['product']->id);
+                    $rollbackProduct->quantityInStock += $p['quantity'];
+                    $rollbackProduct->save();
+                    $j++;
+                }
+                return back()->with('errors_quantity', 'Nemamo toliko proizvoda na stanju!');
+            }
+
             $orderProducts[] = [
                 'idOrder' => $newOrder->id,
                 'idProduct' => $product['product']->id,
@@ -128,11 +145,12 @@ class OrderController extends Controller
                 'color' => $product['color'],
                 'personalisation' => $product['personalisation']
             ];
-            $product['product']->quantityInStock = $product['product']->quantityInStock - $product['quantity'];
-            $product['product']->save();
+
+            $prod->quantityInStock -= $product['quantity'];
+            $prod->save();
+            $i++;
         }
         OrderProduct::insert($orderProducts);
-
         $data = [
             'id' => $newOrder->id,
             'date' => (new \DateTime())->format('d.m.Y'),
@@ -147,13 +165,6 @@ class OrderController extends Controller
             'deliveryPhone' => $newOrder->deliveryPhone,
             'note' => $newOrder->note
         ];
-        /*if ($newOrder->idPaymentMethod === PaymentMethod::POST_PAYMENT) {
-            try{
-                Mail::send(new OrderCreateCustomerMailable($data));
-            } catch (\Exception $exception) {
-                info('MAIL ERROR: ' . $exception->getMessage());
-            }
-        }*/
 
         Session::remove('products');
         Session::remove('cartSum');

@@ -34,13 +34,12 @@ $(document).ready(function(){
         $(".cart-wrapper").css({opacity: 0, display: "none"});
     });
     $(".remove-cart-product").click(function() {
-        console.log('123');
+
         const cartItemId = $(this).parent().parent().attr('id');
         const id = cartItemId.replace('cart-product-', '');
         $('#' + cartItemId).hide();
-        console.log(123);
+
         $.post('/remove-cart-item/' + id, {}, function (data, error) {
-            console.log(data);
             if (data.amount || data.amount === 0) {
                 $('#totalAmount').text(data.amount + ' RSD');
             }
@@ -80,8 +79,14 @@ function validatePersonalisation() {
     if (personalisation.length === 0) {
         form.submit();
     }
+
+    if (!/^[A-Za-z0-9 ]*$/.test(personalisation)) {
+        document.getElementById('personalisation-error').style.display = 'block';
+        return;
+    }
+
     personalisation = personalisation.replace(/\s/g, "");
-    if (personalisation.length > 10) {
+    if (personalisation.length > 6) {
         document.getElementById('personalisation-error').style.display = 'block';
     } else {
         form.submit();

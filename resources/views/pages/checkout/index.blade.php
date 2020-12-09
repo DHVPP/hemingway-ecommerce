@@ -1,8 +1,12 @@
 @extends('layouts.app')
 @section('title', 'Hemingway Leather')
 @section('content')
+
 <div class="section-5">
     <div class="form-block w-form">
+        @if(session()->has('errors_quantity'))
+            <label id='personalisation-error' style="color: #ff0000;display: block; text-align: center">{{session()->get('errors_quantity')}}</label>
+        @endif
         {{ Form::open(['url' => '/order', 'method' => 'POST', 'class' => 'form-2']) }}
         <div class="order-form-div-block">
             <div class="left-order-info-div">
