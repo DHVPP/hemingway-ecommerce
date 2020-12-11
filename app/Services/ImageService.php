@@ -18,7 +18,7 @@ class ImageService
      * @var string[]
      */
     protected static $path = [
-        self::IMAGE_TYPE_PRODUCT => 'images/products',
+        self::IMAGE_TYPE_PRODUCT => 'images/products/',
         self::IMAGE_TYPE_POST => 'images/posts/'
     ];
 
