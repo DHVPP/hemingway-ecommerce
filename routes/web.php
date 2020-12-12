@@ -19,6 +19,7 @@ Auth::routes(['register' => false]);
 
 /* BLOG PAGES */
 Route::get('/blog', 'BlogController@showAllPosts');
+Route::get('/blog/post/{id}', 'BlogController@show');
 
 /* STATIC PAGES */
 Route::get('/about-us', 'StaticPagesController@about');

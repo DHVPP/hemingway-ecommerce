@@ -16,7 +16,7 @@
         @if($count > 1)
             <div class="pagination">
                 @for($i=1; $i <= $count; $i++)
-                    <a href="/products/types?page={{$i}}">{{$i}}</a>
+                    <a href="/blog?page={{$i}}">{{$i}}</a>
                 @endfor
             </div>
         @endif
