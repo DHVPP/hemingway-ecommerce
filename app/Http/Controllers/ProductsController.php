@@ -358,11 +358,13 @@ class ProductsController extends Controller
         $data = $request->all();
 
         if (!empty($data['image'])) {
-            $data['imagePath'] = ImageService::saveImage($request->file('image'), ImageService::IMAGE_TYPE_PRODUCT);
+            $data['mainImage'] = ImageService::saveImage($request->file('image'), ImageService::IMAGE_TYPE_PRODUCT);
         }
+
         if (!isset($data['isOnSpecialOffer'])) {
             $data['isOnSpecialOffer'] = false;
         }
+
         if (!isset($data['isPersonalisationEnabled'])) {
             $data['isPersonalisationEnabled'] = false;
         }

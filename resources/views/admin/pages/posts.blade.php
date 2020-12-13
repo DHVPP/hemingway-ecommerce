@@ -29,7 +29,7 @@
                 @foreach($posts as $post)
                     <tr>
                         <td>{{$post->id}}</td>
-                        <td><a href="/posts/{{$post->id}}">{{$post->title}}</a></td>
+                        <td><a href="/blog/post/{{$post->id}}">{{$post->title}}</a></td>
                         <td>{{$post->created_at}}</td>
                         <td><a href="/admin/posts/{{$post->id}}">Edit post</a></td>
                         <td><a href="/admin/posts/{{$post->id}}">Delete post</a></td>
