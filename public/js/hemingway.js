@@ -80,7 +80,7 @@ function validatePersonalisation() {
         form.submit();
     }
 
-    if (!/^[A-Za-z0-9 ]*$/.test(personalisation)) {
+    if (!/^[A-Za-z0-9 ŠČĆĐŽ]*$/.test(personalisation)) {
         document.getElementById('personalisation-error').style.display = 'block';
         return;
     }
