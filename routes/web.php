@@ -69,6 +69,9 @@ Route::post('/admin/color', 'ProductsController@storeNewColor')->middleware('aut
 Route::get('/admin/posts', 'BlogController@getAllPosts')->middleware('auth');
 Route::get('/admin/blog/posts', 'BlogController@newPost')->middleware('auth');
 Route::post('/admin/blog/posts', 'BlogController@insertNewPost')->middleware('auth');
+Route::get('/admin/blog/posts/{id}', 'BlogController@editPost')->middleware('auth');
+Route::post('/admin/blog/posts/{id}', 'BlogController@updatePost')->middleware('auth');
+Route::delete('/admin/blog/posts/{id}', 'BlogController@deletePost')->middleware('auth');
 
 Route::get('/admin/announcement', 'AdminController@announcement')->middleware('auth');
 Route::post('/admin/announcement', 'AdminController@saveAnnouncement')->middleware('auth');

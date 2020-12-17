@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-5 mb-3">
                         <label for="name">Post title</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="" value=""
+                        <input type="text" class="form-control" id="title" name="title" placeholder="" value="{{$post->title}}"
                                required>
                         <div class="invalid-feedback">
                             Valid post title is required.
@@ -20,7 +20,7 @@
                     <div class="col-md-5 mb-3">
                         <label for="name">Post description</label>
                         <input type="text" class="form-control" id="description" name="description" placeholder=""
-                               value="" required>
+                               value="{{$post->description}}" required>
                         <div class="invalid-feedback">
                             Valid post description is required.
                         </div>
@@ -30,7 +30,7 @@
                 <div class="row" style="width: 2000px">
                     <div class="col-md-5 mb-3">
                         <label for="name">Post content</label>
-                        <textarea name="content"></textarea>
+                        <textarea name="content">{{$post->content}}</textarea>
                     </div>
                 </div>
 
