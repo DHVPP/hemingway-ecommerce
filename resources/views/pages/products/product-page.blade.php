@@ -121,11 +121,13 @@
             <h1 class="heading heading-review">Drugi o ovom proizvodu</h1>
             <div class="review-div">
                 @foreach($reviews as $review)
-                    <div class="review-text-div">
-                        <div class="petar-petrovic">{{$review->name}}</div>
-                        <p class="paragraph-4">{{$review->text}}</p>
-                        <img src="{{asset('images/Asset-1.svg')}}" width="23" alt="" class="image-13">
-                    </div>
+                    @if($review->isApproved)
+                        <div class="review-text-div">
+                            <div class="petar-petrovic">{{$review->name}}</div>
+                            <p class="paragraph-4">{{$review->text}}</p>
+                            <img src="{{asset('images/Asset-1.svg')}}" width="23" alt="" class="image-13">
+                        </div>
+                    @endif
                 @endforeach
             </div>
         @endif
@@ -139,7 +141,7 @@
             </div>
         </div>
         <label class="contact-field-label" style="color:white">Message</label>
-        <textarea id="field" name="text" placeholder="Unesite Vaše mišljene" maxlength="5000" data-name="Field"
+        <textarea id="field" name="text" placeholder="Unesite Vaše mišljenje" maxlength="5000" data-name="Field"
                   class="text-field cc-textarea cc-contact-field w-input"></textarea>
         <input type="hidden" name="idProduct" value="{{$product->id}}"/>
         <input type="submit" value="Submit" data-wait="Please wait..." class="button w-button">

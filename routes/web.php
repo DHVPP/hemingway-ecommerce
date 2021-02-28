@@ -48,30 +48,40 @@ Route::post('/remove-cart-item/{id}', 'ProductsController@removeFromCart');
 Route::post('/contact-form', 'StaticPagesController@contactFormEmail');
 Route::get('/search', 'ProductsController@search');
 Route::post('/review/{id}', 'ProductsController@reviewProduct');
-/* ADMIN DASHBOARD ROUTES */
-Route::get('/home', 'AdminController@home')->middleware('auth');
-Route::get('/orders/{id}', 'OrderController@show')->middleware('auth');
-Route::post('/admin/order/{id}/status', 'OrderController@setOrderStatus')->middleware('auth');
 
-Route::get('/admin/products', 'ProductsController@adminProducts')->middleware('auth');
-Route::delete('/admin/products/delete/{id}', 'ProductsController@adminDeleteProducts')->middleware('auth');
-Route::get('/admin/products/update/{id}', 'ProductsController@adminEditProduct')->middleware('auth');
-Route::post('/admin/products/update/{id}', 'ProductsController@adminUpdateProduct')->middleware('auth');
-Route::post('/admin/product', 'ProductsController@store')->middleware('auth');
-Route::post('/admin/products/color', 'ProductsController@storeProductColor')->middleware('auth');
-Route::get('/admin/products/color/{id}', 'ProductsController@productColor')->middleware('auth');
-Route::get('/admin/products/{id}/labels', 'AdminController@labels')->middleware('auth');
-Route::post('/admin/products/{id}/labels', 'AdminController@storeLabels')->middleware('auth');
-Route::get('/admin/products/{id}/images', 'ProductsController@deleteProductImage')->middleware('auth');
-Route::post('/admin/products/images/{id}', 'ProductsController@removeImage')->middleware('auth');
-Route::get('/admin/color', 'ProductsController@colors')->middleware('auth');
-Route::post('/admin/color', 'ProductsController@storeNewColor')->middleware('auth');
-Route::get('/admin/posts', 'BlogController@getAllPosts')->middleware('auth');
-Route::get('/admin/blog/posts', 'BlogController@newPost')->middleware('auth');
-Route::post('/admin/blog/posts', 'BlogController@insertNewPost')->middleware('auth');
-Route::get('/admin/blog/posts/{id}', 'BlogController@editPost')->middleware('auth');
-Route::post('/admin/blog/posts/{id}', 'BlogController@updatePost')->middleware('auth');
-Route::delete('/admin/blog/posts/{id}', 'BlogController@deletePost')->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'AdminController@home');
+    Route::get('/orders/{id}', 'OrderController@show');
 
-Route::get('/admin/announcement', 'AdminController@announcement')->middleware('auth');
-Route::post('/admin/announcement', 'AdminController@saveAnnouncement')->middleware('auth');
+    Route::prefix('admin')->group(function () {
+        Route::post('/order/{id}/status', 'OrderController@setOrderStatus');
+
+        Route::get('/products', 'ProductsController@adminProducts');
+        Route::delete('/products/delete/{id}', 'ProductsController@adminDeleteProducts');
+        Route::get('/products/update/{id}', 'ProductsController@adminEditProduct');
+        Route::post('/products/update/{id}', 'ProductsController@adminUpdateProduct');
+        Route::post('/product', 'ProductsController@store');
+        Route::post('/products/color', 'ProductsController@storeProductColor');
+        Route::get('/products/color/{id}', 'ProductsController@productColor');
+        Route::get('/products/{id}/labels', 'AdminController@labels');
+        Route::post('/products/{id}/labels', 'AdminController@storeLabels');
+        Route::get('/products/{id}/images', 'ProductsController@deleteProductImage');
+        Route::post('/products/images/{id}', 'ProductsController@removeImage');
+        Route::get('/color', 'ProductsController@colors');
+        Route::post('/color', 'ProductsController@storeNewColor');
+        Route::get('/posts', 'BlogController@getAllPosts');
+        Route::get('/blog/posts', 'BlogController@newPost');
+        Route::post('/blog/posts', 'BlogController@insertNewPost');
+        Route::get('/blog/posts/{id}', 'BlogController@editPost');
+        Route::post('/blog/posts/{id}', 'BlogController@updatePost');
+        Route::delete('/blog/posts/{id}', 'BlogController@deletePost');
+
+        Route::get('/reviews', 'ReviewController@getReviews');
+        Route::post('/reviews/{id}', 'ReviewController@approveReview');
+        Route::post('/reviews/{id}', 'ReviewController@deleteReview');
+
+        Route::get('/announcement', 'AdminController@announcement');
+        Route::post('/announcement', 'AdminController@saveAnnouncement');
+    });
+});
+
