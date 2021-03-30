@@ -10,7 +10,6 @@
                     <th>Text</th>
                     <th>Date</th>
                     <th>Product</th>
-                    <th>Approve</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
@@ -22,15 +21,6 @@
                         <td>{{$review->text}}</td>
                         <td>{{(new DateTime($review->created_at))->format('d.m.Y H:i')}}</td>
                         <td>{{$review->productName()}}</td>
-                        <td>
-                            @if($review->isApproved)
-                                <p class="alert alert-success">Approved</p>
-                            @else
-                                {{ Form::open(['url' => '/admin/reviews/'. $review->id, 'method' => 'POST', 'class' => "w-commerce-commercecheckoutcolumn"]) }}
-                                <button type="submit" class="btn btn-success">Approve</button>
-                                {{ Form::close() }}
-                            @endif
-                        </td>
                         <td>
                             {{ Form::open(['url' => '/admin/reviews/'. $review->id .'', 'method' => 'POST', 'class' => "w-commerce-commercecheckoutcolumn"]) }}
                             <button type="submit" class="btn btn-danger">Delete</button>
