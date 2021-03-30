@@ -19,6 +19,7 @@
                 </a>
             </div>
         </div>
+        <!-- <a href="/products/special-offer"><img src="{{asset("images/nova-godina.png")}}" class="black-friday-image" /></a> -->
         <div class="div-block-4"><a href="#Proizvodi" class="link-block-2 w-inline-block"><img src="{{asset("images/button-down.svg")}}" alt="" class="image-6"></a></div>
     </div>
 </div>

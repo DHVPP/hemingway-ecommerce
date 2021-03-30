@@ -91,9 +91,6 @@ class AdminController extends Controller
         } else {
             ProductLabel::where('idProduct', $id)->delete();
         }
-        $product = Product::find($id);
-        $colors = ProductColor::with('color')->where('idProduct', $product->id)->get();
-        $sameTypeProducts = Product::whereIn('idType', Product::$SIMMILAR_PRODUCTS[$product->idType])->take(3)->get();
-        return view('pages.products.product-page', ['product' => $product, 'productColors' => $colors, 'sameTypeProducts' => $sameTypeProducts, 'labels' => isset($product->labels) ? $product->labels : collect()]);
+        return redirect('products/' . $id);
     }
 }

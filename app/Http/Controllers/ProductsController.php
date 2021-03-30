@@ -12,6 +12,7 @@ use App\ProductColor;
 use App\ProductType;
 use App\ProductTypeMiddle;
 use App\Review;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Session;
@@ -185,7 +186,7 @@ class ProductsController extends Controller
         $productType = $product->productTypes->first();
 
         if (!empty($productType)) {
-            $sameTypeProducts = Product::join('product_type_middles', function ($join) {
+            $sameTypeProducts = Product::select('*', 'products.id as id')->join('product_type_middles', function ($join) {
                 $join->on('product_type_middles.idProduct', '=', 'products.id');
             })->whereIn('product_type_middles.idProductType', Product::$SIMMILAR_PRODUCTS[$productType->idProductType])
                 ->where('products.id', '<>', $product->id)
@@ -213,6 +214,10 @@ class ProductsController extends Controller
     public function addCart(int $id, Request $request)
     {
         $product = Product::find($id);
+        if ($request->get('quantity') > $product->quantityInStock) {
+            return back()->with('errors_quantity', 'Nemamo toliko navedenih proizvoda na stanju!');
+        }
+
         $price = $request->get('quantity') * $product->getPrice();
 
         Session::push('products', [
@@ -286,15 +291,8 @@ class ProductsController extends Controller
      */
     public function storeProductColor(ProductColorRequest $request)
     {
-        $inPublicPath = 'images/products/';
         $data = $request->all();
-        $image = $request->file('image');
-        $format = $image->getClientOriginalExtension();
-        $imageName = $this->generateNameOfImage($format);
-
-        $image->move(public_path($inPublicPath), $imageName);
-
-        $data['imagePath'] = $inPublicPath . $imageName;
+        $data['imagePath'] = ImageService::saveImage($request->file('image'), ImageService::IMAGE_TYPE_PRODUCT);
         ProductColor::create($data);
 
         return redirect('/products/' . $data['idProduct']);
@@ -360,22 +358,24 @@ class ProductsController extends Controller
         $data = $request->all();
 
         if (!empty($data['image'])) {
-            $inPublicPath = 'images/products/';
-            $image = $request->file('image');
-            $format = $image->getClientOriginalExtension();
-            $imageName = $this->generateNameOfImage($format);
-            $image->move(public_path($inPublicPath), $imageName);
-            $data['mainImage'] = $inPublicPath . $imageName;
+            $data['mainImage'] = ImageService::saveImage($request->file('image'), ImageService::IMAGE_TYPE_PRODUCT);
         }
+
         if (!isset($data['isOnSpecialOffer'])) {
             $data['isOnSpecialOffer'] = false;
         }
+        
         if (!isset($data['isPersonalisationEnabled'])) {
             $data['isPersonalisationEnabled'] = false;
         }
         $productTypes = Arr::get($data, 'productTypes');
-
+        $oldProductTypes = $product->productTypesMiddle;
         if (!empty($productTypes)) {
+            foreach ($oldProductTypes as $oldProductType) {
+                if (!in_array($oldProductType->idProductType, $productTypes)) {
+                    $oldProductType->delete();
+                }
+            }
             foreach ($productTypes as $productTypeId) {
                 ProductTypeMiddle::updateOrCreate([
                     'idProduct' => $product->id,
@@ -384,6 +384,10 @@ class ProductsController extends Controller
                     'idProduct' => $product->id,
                     'idProductType' => $productTypeId
                 ]);
+            }
+        } else {
+            foreach ($oldProductTypes as $oldProductType) {
+                $oldProductType->delete();
             }
         }
 

@@ -36,7 +36,8 @@
                 Ispod toga, nalaze se polja gde je potrebno uneti podatke osobe koja prima paket. Ovo
                 su podaci koji se prosleđuju kurirskoj službi u cilju realizacije isporuke pa je neophodno
                 da tu budu isključivo podaci osobe koja prima paket. Ukoliko ste to Vi, ostavite svoje
-                podatke, a ukoliko paket šaljete nekome, neka to budu podaci od te osobe.
+                podatke, a ukoliko paket šaljete nekome, neka to budu podaci od te osobe.<br/>
+                Sledeće polje koje vidite odnosi se na Napomenu. Ovo polje popunjavate samo ukoliko postoji nešto na šta biste nam skrenuli pažnju, bilo to vezano za dostavu, same proizvode ili nešto slično. Popunjavanje ovog polja, dakle, nije obavezno.
             </li>
             <li>
                 Proverite unete podatke i ukoliko su oni ispravni, odaberite način plaćanja klikom na

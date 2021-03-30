@@ -1,6 +1,25 @@
-.narucivanje li{
+.black-friday {
+    padding: 10px;
+    color: black !important;
+    background-color: goldenrod;
+    /*background-color: #1B8A6B;*/
+    border-radius: 20px;
+    text-align: center
+}
+
+.black-friday-image {
+    width: 400px;
+    height: 240px;
+    position: absolute;
+    z-index: 999999;
+    bottom: 0;
+    left: 0;
+}
+
+.narucivanje li {
     margin-bottom: 10px;
 }
+
 .w-commerce-commerceaddtocartform {
     margin-top: 0px;
     margin-right: 0px;
@@ -2406,13 +2425,25 @@
 }
 
 @media screen and (max-width: 770px) {
+    .black-friday {
+        padding: 4px;
+    }
+
+    .black-friday-image {
+        position: relative;
+        width: 180px;
+        height: 120px;
+    }
+
     .about-text {
         width: 100%;
     }
+
     .after-div::before {
         content: "\A";
         white-space: pre;
     }
+
     .w-commerce-commercelayoutcontainer {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -2440,15 +2471,25 @@
 }
 
 @media screen and (max-width: 479px) {
+    .black-friday {
+        padding: 4px;
+    }
+
+    .black-friday-image {
+        width: 100px;
+        height: 70px;
+    }
+
     .after-div::before {
         content: "\A";
         white-space: pre;
     }
+
     .w-commerce-commerceaddtocartquantityinput {
         font-size: 16px;
     }
 
-    .about-picture{
+    .about-picture {
         display: none;
     }
 
@@ -3117,7 +3158,7 @@ h2 {
     position: static;
     padding-right: 0px;
     padding-left: 0px;
-     font-family: 'Markpro book', sans-serif;
+    font-family: 'Markpro book', sans-serif;
     color: #fff;
     font-size: 7vh;
     line-height: 10vh;
@@ -4967,6 +5008,7 @@ h2 {
     -ms-flex-align: center;
     align-items: center;
 }
+
 .about-us {
     background-color: rgba(0, 0, 0, 0.86);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url('../images/about-us.jpg');
@@ -4974,6 +5016,7 @@ h2 {
     background-position: 0px 0px, 50% 50%;
     background-size: auto, cover;
 }
+
 .corporate-gifts {
     background-color: rgba(0, 0, 0, 0.86);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url('../images/corporate-gifts.jpg');
@@ -4981,6 +5024,7 @@ h2 {
     background-position: 0px 0px, 50% 50%;
     background-size: auto, cover;
 }
+
 .contact {
     background-color: rgba(0, 0, 0, 0.86);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url('../images/contact.jpg');
@@ -4988,6 +5032,7 @@ h2 {
     background-position: 0px 0px, 50% 50%;
     background-size: auto, cover;
 }
+
 .link-4 {
     font-family: 'Markpro book', sans-serif;
 
@@ -5240,16 +5285,19 @@ h2 {
 .option-list-home-page {
     display: none;
 }
-.gallery{
+
+.gallery {
     margin-top: 50px;
     width: 100%;
     height: auto;
     display: block;
 }
+
 .gallery img {
     width: 30%;
     margin-bottom: 10px;
 }
+
 .review {
     display: -webkit-box;
     display: -webkit-flex;
@@ -5814,6 +5862,31 @@ h2 {
     align-items: center;
 }
 
+.blog-dugme {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    padding-right: 41px;
+    padding-left: 41px;
+    margin-top: 10px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.post-description {
+    text-align: center;
+    font-family: 'Markpro book', sans-serif;
+}
+
 .text-block-21 {
     font-family: 'Markpro book', sans-serif;
 }
@@ -6045,6 +6118,7 @@ h2 {
     transition: 0.5s;
     -webkit-transition: 0.5s;
 }
+
 .order-item img {
     max-height: 50px;
 }
@@ -6215,9 +6289,10 @@ h2 {
     align-items: center;
 }
 
-.code-class{
+.code-class {
     margin-bottom: 50px
 }
+
 .div-block-21 {
     position: fixed;
     left: 0%;
@@ -6251,12 +6326,20 @@ h2 {
         font-size: 4vh;
         line-height: 6vh;
     }
+
+    .black-friday-image {
+        width: 190px;
+        height: 120px;
+    }
+
     .about-text {
         width: 100%;
     }
-    .about-picture{
+
+    .about-picture {
         display: none;
     }
+
     .tri-bloka {
         height: 100vh;
         -webkit-box-orient: vertical;
@@ -6270,9 +6353,11 @@ h2 {
         width: 60%;
         height: 30vh;
     }
+
     .review-form {
         width: 60%;
     }
+
     .footer-novi {
         padding-right: 0vw;
         padding-left: 0vw;
@@ -6293,33 +6378,41 @@ h2 {
         padding-right: 27px;
         padding-left: 27px;
     }
+
     .gallery img {
         width: 45%;
     }
-    .code-class{
+
+    .code-class {
         margin-bottom: 0;
     }
+
     .male-fotke {
         width: 100%;
         min-height: 100px;
         margin-right: 5px;
     }
+
     .div-block-product {
         width: 40%;
     }
+
     .fotka-proizvoda {
         width: 60%;
         display: block;
         margin: auto;
     }
+
     .text-block {
         font-size: 2vh;
         line-height: normal;
     }
+
     .search-input {
         width: 100px;
         height: 20px;
     }
+
     .button {
         -webkit-box-pack: center;
         -webkit-justify-content: center;
@@ -6432,27 +6525,45 @@ h2 {
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
+    .blog-dugme {
+        width: 100%;
+        height: 70px;
+        padding-right: 0px;
+        padding-left: 0px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
 }
+
 .before-div::after {
-    clear:both;
+    clear: both;
 }
 
 @media screen and (max-width: 770px) {
     .text-block-price {
         font-size: 5vh;
     }
+
     .text-block-18 {
         font-size: 3vh !important;
     }
-    .about-picture{
+
+    .about-picture {
         display: none;
     }
+
     .gallery img {
         width: 100%;
     }
-    .code-class{
+
+    .code-class {
         margin-bottom: 0;
     }
+
     .hero-section {
         height: 120vh;
     }
@@ -6478,6 +6589,8 @@ h2 {
 
     .heading.proizvod-head.page {
         margin-bottom: 20px;
+        font-size: 3vh;
+        line-height: 4vh;
     }
 
     .proizvodi {
@@ -6779,12 +6892,15 @@ h2 {
     .social-div {
         display: none;
     }
-    .code-class{
+
+    .code-class {
         margin-bottom: 0;
     }
+
     .fotka-proizvoda {
         width: 100%;
     }
+
     .search-input {
         margin-bottom: 0px;
         border-style: solid;
@@ -6794,17 +6910,21 @@ h2 {
         border-radius: 20px;
         background-color: transparent;
     }
+
     .text-block {
         font-size: 2vh;
     }
+
     .male-fotke {
         width: 100px;
         min-height: 100px;
         margin-right: 5px;
     }
+
     .fotka {
         margin-top: 10px
     }
+
     .div-block-product {
         height: 100px;
     }
@@ -6812,14 +6932,16 @@ h2 {
     .dropdown-list.w--open {
         left: 3%;
     }
+
     .hero-section {
         height: 130vh;
     }
+
     .about-text {
         width: 100%;
     }
 
-    .review-form{
+    .review-form {
         width: 100%;
     }
 
@@ -6994,6 +7116,10 @@ h2 {
     }
 
     .cena-dugme {
+        padding-right: 0px;
+    }
+
+    .blog-dugme {
         padding-right: 0px;
     }
 

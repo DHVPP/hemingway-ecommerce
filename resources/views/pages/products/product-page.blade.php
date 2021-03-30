@@ -58,6 +58,9 @@
             <label for="quantity" class="field-label-5" style="margin-top:15px">Količina</label>
             <input type="number" id="quantity" name="quantity" min="1" max="{{$product->quantityInStock}}"
                    style="margin-top:10px !important" class="div-block-17" value="1">
+            @if(session()->has('errors_quantity'))
+                <label id='personalisation-error' style="color: #ff0000;">{{session()->get('errors_quantity')}}</label>
+            @endif
             @if(!empty($product->dimensions))
                 <div class="text-block-19" style="margin:30px 0 20px 0">Dimenzije: <span class="text-block-18"
                                                                                          style="font-size: large">{{$product->dimensions}}</span>
@@ -68,11 +71,13 @@
                     <div>Only {{$product->quantityInStock}} left in stock!</div>
                 </div>
             @endif
+
             @if ($product->isPersonalisationEnabled)
-                <label for="quantity" class="field-label-5" style="margin-top:15px">Personalizacija</label>
+                <label for="quantity" class="field-label-5" style="margin-top:15px">Besplatna personalizacija</label>
                 <input name="personalisation" class="text-field w-input" type="text"
-                       placeholder="Personalizujte vas proizvod" pattern="\s*(\S\s*){10,}">
-                <label id='personalisation-error' style="color: red; display: none">Najvise 10 karaktera ne računajući razmak!</label>
+                       placeholder="Inicijali/ime za utiskivanje" onkeyup="this.value = this.value.toUpperCase()">
+                <label id='personalisation-error' style="color: red; display: none">Najviše 6 karaktera uključujući
+                    slova i brojeve.</label>
             @endif
             @if($product->quantityInStock <= 0)
                 <div class="w-commerce-commerceaddtocartoutofstock" style="text-align: center">
@@ -134,7 +139,7 @@
             </div>
         </div>
         <label class="contact-field-label" style="color:white">Message</label>
-        <textarea id="field" name="text" placeholder="Unesite Vaše mišljene" maxlength="5000" data-name="Field"
+        <textarea id="field" name="text" placeholder="Unesite Vaše mišljenje" maxlength="5000" data-name="Field"
                   class="text-field cc-textarea cc-contact-field w-input"></textarea>
         <input type="hidden" name="idProduct" value="{{$product->id}}"/>
         <input type="submit" value="Submit" data-wait="Please wait..." class="button w-button">
