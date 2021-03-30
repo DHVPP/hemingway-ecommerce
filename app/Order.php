@@ -13,6 +13,10 @@ class Order extends Model
     protected $fillable = ['email', 'name', 'phoneNumber', 'address', 'country', 'city', 'zipCode', 'price', 'idPaymentMethod', 'deliveryName', 'deliveryPhone', 'note'];
 
     const
+        DELIVERY_PRICE = 250,
+        DELIVERY_LIMIT = 5000;
+
+    const
         STATUS_PENDING = 1,
         STATUS_CONFIRMED = 2,
         STATUS_DENIED = 3;

@@ -138,6 +138,14 @@
                         </div>
                     </div>
                     <div class="w-commerce-commercecheckoutsummarylineitem">
+                        <div>Proizvodi:</div>
+                        <div class="w-commerce-commercecheckoutsummarytotal">{{$data['productSum']}} RSD</div>
+                    </div>
+                    <div class="w-commerce-commercecheckoutsummarylineitem">
+                        <div>Dostava:</div>
+                        <div class="w-commerce-commercecheckoutsummarytotal">{{$data['delivery']}} RSD</div>
+                    </div>
+                    <div class="w-commerce-commercecheckoutsummarylineitem">
                         <div>Ukupno:</div>
                         <div class="w-commerce-commercecheckoutsummarytotal">{{$data['sum']}} RSD</div>
                     </div>

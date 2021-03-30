@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $(".menu").css("top", $(".announcement").css('height'));
     $(window).resize(function () {
         $(".menu").css("top", $(".announcement").css('height'));
@@ -27,13 +27,13 @@ $(document).ready(function(){
     $(".contact-section.legal-notice").css("margin-top", size + "px");
     $(".special-section").css("margin-top", size + "px");
 
-    $(".cart-button").click(function() {
+    $(".cart-button").click(function () {
         $(".cart-wrapper").css({opacity: 1, display: "block"});
     });
-    $(".close-button ").click(function() {
+    $(".close-button ").click(function () {
         $(".cart-wrapper").css({opacity: 0, display: "none"});
     });
-    $(".remove-cart-product").click(function() {
+    $(".remove-cart-product").click(function () {
 
         const cartItemId = $(this).parent().parent().attr('id');
         const id = cartItemId.replace('cart-product-', '');
@@ -45,15 +45,24 @@ $(document).ready(function(){
             }
         })
     });
-    $(".remove-checkout-product").click(function() {
+    $(".remove-checkout-product").click(function () {
         const cartItemId = $(this).parent().parent().attr('id');
         const id = cartItemId.replace('checkout-product-', '');
         $('#' + cartItemId).hide();
         $.post('/remove-cart-item/' + id, {}, function (data, error) {
             if (data.amount || data.amount === 0) {
+                const intAmount = data.amount;
                 const amount = data.amount + ' RSD';
                 $('#sum').text(amount);
                 $('#middleSum').text(amount);
+                let deliveryAmount = 0;
+                let totalAmount = intAmount;
+                if (intAmount <= 5000) {
+                    totalAmount += 250;
+                    deliveryAmount = 250;
+                }
+                $('#deliveryCheckoutAmount').text(deliveryAmount + ' RSD');
+                $('#totalCheckoutAmount').text(totalAmount + ' RSD');
             }
         })
     });
@@ -65,7 +74,7 @@ $(document).ready(function(){
         document.getElementById('color').value = value;
         $(".fotka").attr("src", image);
     });
-    $(".male-fotke").click(function (){
+    $(".male-fotke").click(function () {
         const src = $(this).attr('src');
         $('.fotka').attr('src', src);
         $('#link-image-open').attr('href', src);

@@ -112,18 +112,26 @@ class OrderController extends Controller
      */
     public function createOrder(Request $request, Order $model)
     {
+        $deliveryAmount = 0;
+        $productAmount = 0;
         $order = $request->all();
         if (!Session::has('products')) {
             return redirect('/');
         }
 
-        $order['price'] = Session::get('cartSum');
         $products = Session::get('products');
+        $order['price'] = Session::get('cartSum');
+
+        if ($order['price'] <= Order::DELIVERY_LIMIT) {
+            $order['price'] = $order['price'] + Order::DELIVERY_PRICE;
+            $deliveryAmount = Order::DELIVERY_PRICE;
+        }
         $newOrder = $model->createOrder($order);
 
         $orderProducts = [];
         $i = 0;
         foreach (Session::get('products') as $product) {
+            $productAmount += $product['price'];
             $prod = Product::find($product['product']->id);
             if (!$prod instanceof Product || $prod->quantityInStock == 0){
                 $newOrder->delete();
@@ -163,9 +171,11 @@ class OrderController extends Controller
             'sum' => $newOrder->price,
             'deliveryName' => $newOrder->deliveryName,
             'deliveryPhone' => $newOrder->deliveryPhone,
-            'note' => $newOrder->note
+            'note' => $newOrder->note,
+            'productSum' => $productAmount,
+            'delivery' => $deliveryAmount
         ];
-
+        
         Session::remove('products');
         Session::remove('cartSum');
 
