@@ -55,7 +55,7 @@ class OrderController extends Controller
             $orderProducts[] = [
                 'id' => $id++,
                 'quantity' => $product->quantity,
-                'price' => $product->quantity * $prod->price,
+                'price' => $product->price,
                 'color' => $product->color,
                 'product' => $prod,
                 'personalisation' => $product->personalisation
@@ -104,7 +104,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Dont ask what im doing in this method please
+     * Dont ask what im doing in this method
      *
      * @param Request $request
      * @param Order $model
@@ -151,6 +151,7 @@ class OrderController extends Controller
                 'idProduct' => $product['product']->id,
                 'quantity' => $product['quantity'],
                 'color' => $product['color'],
+                'price' => $prod->getPrice() * $product['quantity'],
                 'personalisation' => $product['personalisation']
             ];
 
@@ -175,7 +176,7 @@ class OrderController extends Controller
             'productSum' => $productAmount,
             'delivery' => $deliveryAmount
         ];
-        
+
         Session::remove('products');
         Session::remove('cartSum');
 

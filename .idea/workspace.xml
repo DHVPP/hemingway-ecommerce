@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ab796d-5644-4daa-ab6c-a2070184ceec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/OrderProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/OrderProduct.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -236,6 +246,10 @@
       <workItem from="1605353500023" duration="6701000" />
       <workItem from="1605452631714" duration="615000" />
       <workItem from="1605457698309" duration="873000" />
+      <workItem from="1617097435649" duration="5282000" />
+      <workItem from="1618050969424" duration="1548000" />
+      <workItem from="1618217051494" duration="153000" />
+      <workItem from="1618411270441" duration="550000" />
     </task>
     <servers />
   </component>
@@ -244,55 +258,5 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="381" y="195" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596826730787">
-      <screen x="0" y="0" width="1855" height="1080" />
-    </state>
-    <state x="381" y="195" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1855.1080@0.0.1855.1080" timestamp="1596826730787" />
-    <state x="732" y="257" key="#com.intellij.ide.util.MemberChooser" timestamp="1604772240066">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="732" y="257" key="#com.intellij.ide.util.MemberChooser/0.0.1854.1080@0.0.1854.1080" timestamp="1604772240066" />
-    <state x="732" y="257" key="#com.intellij.ide.util.MemberChooser/0.0.1855.1080@0.0.1855.1080" timestamp="1597083587283" />
-    <state x="606" y="277" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596818524378">
-      <screen x="0" y="0" width="1855" height="1080" />
-    </state>
-    <state x="606" y="277" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1855.1080@0.0.1855.1080" timestamp="1596818524378" />
-    <state x="657" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596898924383">
-      <screen x="0" y="0" width="1855" height="1080" />
-    </state>
-    <state x="657" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1855.1080@0.0.1855.1080" timestamp="1596898924383" />
-    <state x="550" y="108" key="CommitChangelistDialog2" timestamp="1605359227681">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="550" y="108" key="CommitChangelistDialog2/0.0.1854.1080@0.0.1854.1080" timestamp="1605359227681" />
-    <state x="550" y="108" key="CommitChangelistDialog2/0.0.1855.1080@0.0.1855.1080" timestamp="1597178419536" />
-    <state x="707" y="295" key="FileChooserDialogImpl" timestamp="1604530581386">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="707" y="295" key="FileChooserDialogImpl/0.0.1854.1080@0.0.1854.1080" timestamp="1604530581386" />
-    <state x="728" y="263" key="NewPhpClassDialog" timestamp="1597083387363">
-      <screen x="0" y="0" width="1855" height="1080" />
-    </state>
-    <state x="728" y="263" key="NewPhpClassDialog/0.0.1855.1080@0.0.1855.1080" timestamp="1597083387363" />
-    <state x="428" y="185" key="SettingsEditor" timestamp="1596891923133">
-      <screen x="0" y="0" width="1855" height="1080" />
-    </state>
-    <state x="428" y="185" key="SettingsEditor/0.0.1855.1080@0.0.1855.1080" timestamp="1596891923133" />
-    <state x="41" y="0" width="1441" height="1067" key="dock-window-1" timestamp="1596892723416">
-      <screen x="0" y="0" width="1855" height="1080" />
-    </state>
-    <state x="41" y="0" width="1441" height="1067" key="dock-window-1/0.0.1855.1080@0.0.1855.1080" timestamp="1596892723416" />
-    <state x="584" y="250" key="run.anything.popup" timestamp="1604173941523">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="584" y="250" key="run.anything.popup/0.0.1854.1080@0.0.1854.1080" timestamp="1604173941523" />
-    <state x="584" y="250" key="run.anything.popup/0.0.1855.1080@0.0.1855.1080" timestamp="1597180053923" />
-    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup" timestamp="1605359351913">
-      <screen x="0" y="0" width="1854" height="1080" />
-    </state>
-    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup/0.0.1854.1080@0.0.1854.1080" timestamp="1605359351913" />
-    <state x="589" y="235" width="674" height="678" key="search.everywhere.popup/0.0.1855.1080@0.0.1855.1080" timestamp="1600120510544" />
   </component>
 </project>
