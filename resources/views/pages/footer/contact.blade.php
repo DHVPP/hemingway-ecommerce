@@ -37,6 +37,6 @@
     </div>
     <div class="contact-section">
         <h1 class="heading contact-heading">Ili nas kontaktirajte</h1>
-        <p class="paragraph-2">Hemingway Gentleman Supply<br><!--+381 60 6363 515<br>-->office@hemingwayleather.com</p>
+        <p class="paragraph-2">Hemingway Gentleman Supply<br>+381 60 6363 515<br>office@hemingwayleather.com</p>
     </div>
 @endsection
