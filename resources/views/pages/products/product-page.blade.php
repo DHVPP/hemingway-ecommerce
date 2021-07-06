@@ -121,11 +121,13 @@
             <h1 class="heading heading-review">Drugi o ovom proizvodu</h1>
             <div class="review-div">
                 @foreach($reviews as $review)
-                    <div class="review-text-div">
-                        <div class="petar-petrovic">{{$review->name}}</div>
-                        <p class="paragraph-4">{{$review->text}}</p>
-                        <img src="{{asset('images/Asset-1.svg')}}" width="23" alt="" class="image-13">
-                    </div>
+                    @if($review->isApproved)
+                        <div class="review-text-div">
+                            <div class="petar-petrovic">{{$review->name}}</div>
+                            <p class="paragraph-4">{{$review->text}}</p>
+                            <img src="{{asset('images/Asset-1.svg')}}" width="23" alt="" class="image-13">
+                        </div>
+                    @endif
                 @endforeach
             </div>
         @endif

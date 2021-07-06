@@ -15,12 +15,12 @@
     </div>
     <div class="linkovi-stranice-footer">
         <div class="div-block-13">
-            <h1 class="footer-heading">Hemingway</h1
-            ><a href="/about-us" class="link-3">O nama</a>
+            <h1 class="footer-heading">Hemingway</h1>
+            <a href="/about-us" class="link-3">O nama</a>
+            <a href="/blog" class="link-3">Blog</a>
             <!--<a href="/contact" class="link-3">Personalizacija</a>-->
             <a href="/pokloni" class="link-3">Korporativni pokloni</a>
             <a href="/pokloni-za-muskarce" class="link-3">Pokloni za muskarce</a>
-            <!--<a href="#" class="link-3">Blog</a>-->
             <a href="/poslovi" class="link-3">Poslovi i saradnja</a>
             <!--<a href="/predlozi" class="link-3">Predloži proizvod</a>-->
         </div>
@@ -34,7 +34,9 @@
             <!--<a href="/obavestenja" class="link-3">Obaveštenja</a>-->
         </div>
         <div class="div-block-13">
-            <a href="/contact" class="link-3"><h1 class="footer-heading" style="margin-bottom: 0px">Kontakt</h1></a>
+            <a href="/contact" class="link-3">
+                <h1 class="footer-heading" style="margin-bottom: 0px">Kontakt</h1>
+            </a>
             <a href="#" class="link-3" style="margin-top: 3vh">060/6363515</a>
             <a href="#" class="link-3">office@hemingwayleather.com</a>
             <a href="#" class="link-3">info@hemingwayleather.com</a>

@@ -364,7 +364,7 @@ class ProductsController extends Controller
         if (!isset($data['isOnSpecialOffer'])) {
             $data['isOnSpecialOffer'] = false;
         }
-        
+
         if (!isset($data['isPersonalisationEnabled'])) {
             $data['isPersonalisationEnabled'] = false;
         }
