@@ -17,6 +17,16 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/admin/posts">
+                    List all Posts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/blog/posts">
+                    Insert new Post
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/admin/reviews">
                     Reviews
                 </a>
