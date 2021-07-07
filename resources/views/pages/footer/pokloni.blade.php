@@ -24,4 +24,5 @@
             <a href="images/pokloni/business.jpg" data-lightbox="roadtrip"><img class="fotka" src="images/pokloni/business.jpg"/></a>
         </div>
     </div>
+    <script src="{{asset('js/lightbox.js')}}" type="text/javascript"></script>
 @endsection

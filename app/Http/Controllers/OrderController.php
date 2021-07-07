@@ -8,6 +8,7 @@ use App\Entities\Payments\PaymentMethod;
 use App\Mail\ConfirmOrderMailable;
 use App\Mail\OrderCreateCustomerMailable;
 use App\Order;
+use App\PaymentInit;
 use App\OrderProduct;
 use App\Product;
 use Exception;

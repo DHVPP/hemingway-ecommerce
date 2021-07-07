@@ -138,11 +138,25 @@
                             style="margin-bottom: 10px;">Plaćanje pouzećem
                     </button>
                     <button type="submit" name='action' value='post-payment' class="button-6 w-button"
-                            style="background-color: rgba(0, 0, 0, 0.7)">Plaćanje uplatnicom
+                            style="background-color: rgba(0, 0, 0, 0.7); margin-bottom: 10px;">Plaćanje uplatnicom
                     </button>
+                    <div id="paypal-button-container"></div>
                 </div>
             </div>
             {{ Form::close() }}
         </div>
+        <script type="text/javascript" src="https://www.paypal.com/sdk/js?client-id=AfkEit2YGNBmN8YxjT0wc0FbrhhT2tRsjypTONEbw-VFqorTY31jcOxaGi3fsCAYbp7BhtCBUs6XK3dM&locale=en_RS"> </script>
+        <script type="text/javascript">
+            window.paypal.Buttons(
+            //     {
+            //     createOrder: function (data, actions) {
+            //         console.log(data);
+            //         console.log(actions);
+            //     }
+            // }
+            ).render('#paypal-button-container');
+
+            document.getElementsByName('givenName')[0].value = "vladimir";
+        </script>
     </div>
 @endsection

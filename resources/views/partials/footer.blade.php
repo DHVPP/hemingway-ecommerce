@@ -2,13 +2,13 @@
     <div class="logo-social-div">
         <div class="logo-footer"><img src="{{asset('images/logo-uokviren.svg')}}" alt=""></div>
         <div class="div-block-11">
-            <a href="https://www.facebook.com/hemingway.leather" target="_blank" class="social-footer w-inline-block">
+            <a href="https://www.facebook.com/hemingway.leather" target="_blank" class="social-footer w-inline-block" rel="noreferrer">
                 <img src="{{asset('images/face.svg')}}" alt="" class="image-11">
             </a>
-            <a href="https://twitter.com/Hemingway_GS" target="_blank" class="social-footer w-inline-block">
+            <a href="https://twitter.com/Hemingway_GS" target="_blank" class="social-footer w-inline-block" rel="noreferrer">
                 <img src="{{asset('images/twitter.svg')}}" alt="" class="image-11">
             </a>
-            <a href="https://www.instagram.com/hemingway_leather" target="_blank" class="social-footer w-inline-block">
+            <a href="https://www.instagram.com/hemingway_leather" target="_blank" class="social-footer w-inline-block" rel="noreferrer">
                 <img src="{{asset('images/instagram.svg')}}" alt="" class="image-11">
             </a>
         </div>

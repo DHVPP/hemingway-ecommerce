@@ -8,19 +8,19 @@
                 <p class="paragraph"><i>''Being a true Gentleman never goes out of fashion.''</i></p>
             </div>
             <div class="social-div">
-                <a href="https://www.facebook.com/hemingway.leather" target="_blank" class="w-inline-block">
+                <a href="https://www.facebook.com/hemingway.leather" target="_blank" class="w-inline-block" rel="noreferrer">
                     <img src={{asset("images/face.svg")}} alt="" class="image-5">
                 </a>
-                <a href="https://twitter.com/Hemingway_GS" target="_blank" class="w-inline-block">
+                <a href="https://twitter.com/Hemingway_GS" target="_blank" class="w-inline-block" rel="noreferrer">
                     <img src="{{asset("images/twitter.svg")}}" alt="" class="image-5">
                 </a>
-                <a href="https://www.instagram.com/hemingway_leather" target="_blank" h class="w-inline-block">
+                <a href="https://www.instagram.com/hemingway_leather" target="_blank" h class="w-inline-block" rel="noreferrer">
                     <img src="{{asset("images/instagram.svg")}}" alt="" class="image-5">
                 </a>
             </div>
         </div>
         <!-- <a href="/products/special-offer"><img src="{{asset("images/nova-godina.png")}}" class="black-friday-image" /></a> -->
-        <div class="div-block-4"><a href="#Proizvodi" class="link-block-2 w-inline-block"><img src="{{asset("images/button-down.svg")}}" alt="" class="image-6"></a></div>
+        <div class="div-block-4"><a href="#Proizvodi" class="link-block-2 w-inline-block" rel="noreferrer"><img src="{{asset("images/button-down.svg")}}" alt="" class="image-6"></a></div>
     </div>
 </div>
 <div class="tri-bloka">

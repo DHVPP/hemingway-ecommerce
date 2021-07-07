@@ -158,4 +158,6 @@
             @endif
         </div>
     </div>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2a6cd15e75630012258308&product=inline-share-buttons' async='async'></script>
+    <script src="{{asset('js/lightbox.js')}}" type="text/javascript"></script>
 @endsection

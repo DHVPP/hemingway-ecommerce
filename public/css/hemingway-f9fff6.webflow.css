@@ -7141,6 +7141,7 @@ h2 {
     src: url('../fonts/Didot-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -7148,6 +7149,7 @@ h2 {
     src: url('../fonts/Mark.Pro.Bold.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -7155,6 +7157,7 @@ h2 {
     src: url('../fonts/MarkPro-Book.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -7162,6 +7165,7 @@ h2 {
     src: url('../fonts/Didot-LT-Std-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -7169,4 +7173,5 @@ h2 {
     src: url('../fonts/Didot-LT-Std-Italic.otf') format('opentype');
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
 }

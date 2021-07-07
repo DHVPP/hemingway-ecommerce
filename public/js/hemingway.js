@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $(".dropdown-toggle").click('click', function() {
+        if ($(".dropdown-toggle").hasClass('w--open')) {
+            $(".dropdown-list").removeClass('w--open');
+            $(".dropdown-toggle").removeClasss('w--open');
+            return;
+        } 
+
+        $(".dropdown-toggle").addClass('w--open');
+        $(".dropdown-list").addClass('w--open');
+    });
+
     $(".menu").css("top", $(".announcement").css('height'));
     $(window).resize(function () {
         $(".menu").css("top", $(".announcement").css('height'));
